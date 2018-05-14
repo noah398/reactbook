@@ -10,7 +10,19 @@
     <script src="react/build/react-dom.js"></script>
     <script>
         ReactDOM.render(
-            React.DOM.h1(null, 'Hello world'),
+            React.DOM.h1(
+                {
+                    id: 'my-heading',
+                    className: 'heading',
+                    htmlFor: 'me',
+                    style: {
+                        background: 'black',
+                        color: 'white'
+                    }
+                },
+                React.DOM.span(null, 'Hello'),
+                ' world'
+            ),
             document.getElementById('app')
         )
     </script>
