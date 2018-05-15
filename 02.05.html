@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>State</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="react/build/react.js"></script>
+<script src="react/build/react-dom.js"></script>
+<script>
+    var TextareaCounter = React.createClass({
+        propTypes: {
+            text: React.PropTypes.string
+        },
+        getDefaultProps: function () {
+            return {
+                defaultValue: ''
+            }
+        },
+        getInitialState: function () {
+            return {
+                text: this.props.defaultValue
+            }
+        },
+        _textChange: function (ev) {
+            this.setState({
+                text: ev.target.value
+            })
+        },
+        _log: function (methodName, args) {
+            console.log(methodName, args);
+        },
+        componentWillUpdate: function () {
+            this._log('componentWillUpdate', arguments)
+        },
+        componentDidUpdate: function (oldProps, oldState) {
+            this._log('componentDidUpdate', arguments);
+            if (this.state.text.length > 10) {
+                this.replaceState(oldState);
+            }
+        },
+        componentWillMount: function () {
+            this._log('componentWillMount', arguments);
+        },
+        componentDidMount: function () {
+            this._log('componentDidMount', arguments);
+        },
+        componentWillUnmount: function () {
+            this._log('componentWillUnmount', arguments);
+        },
+        render: function () {
+            return React.DOM.div(null,
+                React.DOM.textarea({
+                    value: this.state.text,
+                    onChange: this._textChange
+                }),
+                React.DOM.h3(null, this.state.text.length)
+            )
+        }
+    });
+
+    var myTextareaCounter = ReactDOM.render(
+        React.createElement(TextareaCounter, {
+            text: 'john'
+        }),
+        document.getElementById('app')
+    );
+</script>
+</body>
+</html>
