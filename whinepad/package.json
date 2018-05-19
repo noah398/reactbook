@@ -1,0 +1,41 @@
+{
+  "name": "whinepad",
+  "version": "1.0.0",
+  "description": "whinepad app",
+  "main": "js/source/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noah398/reactbook.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "noah398",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noah398/reactbook/issues"
+  },
+  "homepage": "https://github.com/noah398/reactbook#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "browserify": "^16.2.2",
+    "cssshrink": "0.0.5",
+    "grunt": "^0.4.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "uglify": "^0.1.5",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
+}
